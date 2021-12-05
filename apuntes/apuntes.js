@@ -17,5 +17,7 @@ formas de  desarrollo con pruebas
 primero los test TDD testing driven desing
 Bdd 
 
+uuid
+genera un id aleatorios
 
 */

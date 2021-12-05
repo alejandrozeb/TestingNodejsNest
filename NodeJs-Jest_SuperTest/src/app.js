@@ -1,6 +1,8 @@
 import express from 'express';
+import {v4} from 'uuid';
 
 const app = express()
+app.use(express.json());
 
 app.get("/ping", (req,res)=>{
     res.send("pong");
@@ -15,7 +17,8 @@ app.post('/task', (req, res)=>{
     const {title, description} = req.body;
     res.json({
         title,
-        description
+        description,
+        id: v4(),
     });
 });
 
