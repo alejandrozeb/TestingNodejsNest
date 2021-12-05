@@ -10,4 +10,12 @@ describe("GET /task", () => {
     //assert
     expect(response.statusCode).toBe(200);
   });
+
+  test("should respond with an array", async ()=>{
+    const response = await request(app).get('/task').send();
+    //verifica si es un array
+    expect(response.body).toBeInstanceOf(Array);
+
+  });
+
 });
