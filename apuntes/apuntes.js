@@ -13,5 +13,9 @@ JEST pude ustilizar modulos
 "test": "set NODE_OPTIONS=--experimental-vm-modules &&jest"
 en package.json para dejar de escribir el comando largo
 
+formas de  desarrollo con pruebas 
+primero los test TDD testing driven desing
+Bdd 
+
 
 */

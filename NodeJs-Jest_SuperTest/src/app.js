@@ -10,5 +10,14 @@ app.get('/task', (req,res)=>{
     res.json([]);
 });
 
+app.post('/task', (req, res)=>{
+    //el send devuelve un html y con string
+    const {title, description} = req.body;
+    res.json({
+        title,
+        description
+    });
+});
+
 
 export default app;
