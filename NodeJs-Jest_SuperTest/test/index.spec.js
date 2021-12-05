@@ -47,10 +47,22 @@ describe("POST /task", ()=>{
   //fail tests
   describe('when a title and description is missing', ()=>{
     test('Should respond with a 400 status code', async ()=>{
-      const response = await request(app).post('/task').send({});
-      expect(response.statusCode).toBe(400);
+      //enviando multiples objetos
+      const fields = [
+        {},
+        {title: 'Test Task'},
+        {description: 'Test description'},
+      ];
 
-    })
+      //iterando las peticiones
+      for(const body of fields){
+        const response = await request(app).post('/task').send(body);
+        expect(response.statusCode).toBe(400);
+      }
+    });
+
+
   });
+
 
 });
