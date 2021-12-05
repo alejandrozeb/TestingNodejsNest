@@ -7,7 +7,7 @@ import request from "supertest";
 describe("GET /task", () => {
   test("should respond with a 200 status code", async () => {
     const response = await request(app).get("/task").send();
-    console.log(response);
-    //expect()
+    //assert
+    expect(response.statusCode).toBe(200);
   });
 });

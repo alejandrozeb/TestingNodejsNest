@@ -6,4 +6,9 @@ app.get("/ping", (req,res)=>{
     res.send("pong");
 });
 
+app.get('/task', (req,res)=>{
+    res.json([]);
+});
+
+
 export default app;
