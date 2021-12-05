@@ -15,6 +15,7 @@ app.get('/task', (req,res)=>{
 app.post('/task', (req, res)=>{
     //el send devuelve un html y con string
     const {title, description} = req.body;
+    if(!title || !description) return res.sendStatus(400);
     res.json({
         title,
         description,

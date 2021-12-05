@@ -44,4 +44,13 @@ describe("POST /task", ()=>{
     });
   });
 
+  //fail tests
+  describe('when a title and description is missing', ()=>{
+    test('Should respond with a 400 status code', async ()=>{
+      const response = await request(app).post('/task').send({});
+      expect(response.statusCode).toBe(400);
+
+    })
+  });
+
 });

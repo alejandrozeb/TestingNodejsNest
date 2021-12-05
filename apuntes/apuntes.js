@@ -22,4 +22,8 @@ genera un id aleatorios
 
 
 podemos anidar describe y declarar objetos en un scope de describe que comparten los test
+
+
+--detectOpenHandles
+muestra las tareas abiertas depues del request
 */
