@@ -20,4 +20,6 @@ Bdd
 uuid
 genera un id aleatorios
 
+
+podemos anidar describe y declarar objetos en un scope de describe que comparten los test
 */
