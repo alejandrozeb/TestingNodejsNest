@@ -166,4 +166,33 @@ test('city database has San Juan', () => {
 
 ---------One-TIme Setup-------------------
 only need to do setup once
+beforeAll
+afterAll
+beforeAll(() => {
+  return initializeCityDatabase();
+});
+
+afterAll(() => {
+  return clearCityDatabase();
+});
+
+test('city database has Vienna', () => {
+  expect(isCity('Vienna')).toBeTruthy();
+});
+
+test('city database has San Juan', () => {
+  expect(isCity('San Juan')).toBeTruthy();
+});
+
+---------scoping--------------------
+group test with describe and have a scope
+----------------order of execution of describe and test blocks-------------
+ by default Jest runs all the tests serially in the order they were encountered in the collection phase, waiting for each to finish and be tidied up before moving on
+
+ ---run tests--------------------------------
+ test.only run just one test.
+
+
+ ***************************Mock functions****************
+
 */
