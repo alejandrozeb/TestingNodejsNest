@@ -144,7 +144,26 @@ test('the fetch fails with an error', async () => {
   await expect(fetchData()).rejects.toMatch('error');
 });
 
+******Setupand teardown*****************
+if you need to do repeatedly for many tests. beforeEach afterEach
+ example a method which have to called before each test and after each of these.
 
+ beforeEach(() => {
+  initializeCityDatabase();
+});
 
+afterEach(() => {
+  clearCityDatabase();
+});
 
+test('city database has Vienna', () => {
+  expect(isCity('Vienna')).toBeTruthy();
+});
+
+test('city database has San Juan', () => {
+  expect(isCity('San Juan')).toBeTruthy();
+});
+
+---------One-TIme Setup-------------------
+only need to do setup once
 */
