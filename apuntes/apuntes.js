@@ -29,7 +29,47 @@ muestra las tareas abiertas depues del request
 
 se esta haciendo test a los end points pero tambien s epuede probar conexiones a bd, funciones, metodos.
 
-Review Doc
+*****************Review Doc JEST *******************
+
+.toBe  uses object.is to test exact equality
+
+.toEqual recursively checks every field of an object or array(values of an object)
+
+.not  test the oposite example .not.toBe()
+
+-----------truthiness-------------
+distinguish between undefined, null and false
+
+toBeNull       match null
+toBeUndefined match undefined
+toBeDefined oppposite of toBeUndeined
+toBeTruthy match an if statement treats as true
+toBeFalsy match an if statement treats as true
+-------numbers-------------------------
+.toBeGreaterThan();
+.toBeGreaterThanOrEqual();
+.toBeLessThan();
+.toBeLessThanOrEqual();
+
+toBe and toEqual are equivalent for numbers
+.toBe(4);
+.toEqual(4);
+
+For float
+.toBeCloseTo() dont wanna a test to depend on tiny roundubg error.
+
+----Strings----------------------------
+regulr expresions
+.tomatch() 
+example
+test('but there is a "stop" in Christoph', () => {
+  expect('Christoph').toMatch(/stop/);
+});
+
+-----Arrays and iterables--------------
+toContain() verify if an array or iterable contains a particular item
+
+
 
 
 */
