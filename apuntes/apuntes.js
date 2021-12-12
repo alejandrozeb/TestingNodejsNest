@@ -119,6 +119,31 @@ test('the fetch fails with an error', () => {
   return expect(fetchData()).rejects.toMatch('error');
 });
 
+------------Async/Await--------------------------------
+use the async in front of the function 
+test('the data is peanut butter', async () => {
+  const data = await fetchData();
+  expect(data).toBe('peanut butter');
+});
+
+test('the fetch fails with an error', async () => {
+  expect.assertions(1);
+  try {
+    await fetchData();
+  } catch (e) {
+    expect(e).toMatch('error');
+  }
+});
+
+combine with .reject and .resolve
+test('the data is peanut butter', async () => {
+  await expect(fetchData()).resolves.toBe('peanut butter');
+});
+
+test('the fetch fails with an error', async () => {
+  await expect(fetchData()).rejects.toMatch('error');
+});
+
 
 
 
