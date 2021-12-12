@@ -69,6 +69,56 @@ test('but there is a "stop" in Christoph', () => {
 -----Arrays and iterables--------------
 toContain() verify if an array or iterable contains a particular item
 
+---exception-----------
+toThrow() also used for tehe exact error message or a regexp
+
+have to used in a wrapping function
+
+expect(() => compileAndroidCode()).toThrow('you are using the wrong JDK');
+expect(() => compileAndroidCode()).toThrow(/JDK/);
+
+*********asynchronous************
+-----Callbacks------------
+test('the data is peanut butter', done => {
+  function callback(data) {
+    try {
+      expect(data).toBe('peanut butter');
+      done();
+    } catch (error) {
+      done(error);
+    }
+  }
+
+  fetchData(callback);
+});
+
+done have to used for test
+
+----Promises-----------------------
+test('the data is peanut butter', () => {
+  return fetchData().then(data => {
+    expect(data).toBe('peanut butter');
+  });
+});
+be sure to return of a promise
+
+test('the fetch fails with an error', () => {
+  expect.assertions(1);
+  return fetchData().catch(e => expect(e).toMatch('error'));
+});
+catch an error in a promise
+
+wait for an respond
+test('the data is peanut butter', () => {
+  return expect(fetchData()).resolves.toBe('peanut butter');
+});
+
+or if rejected
+
+test('the fetch fails with an error', () => {
+  return expect(fetchData()).rejects.toMatch('error');
+});
+
 
 
 
